@@ -48,8 +48,8 @@ const Home = () => {
                                 Trending product in {year}
                             </p>
                             <h2>Make Your Interior More Minimalistic & Modern </h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                Vitae corrupti natus odio optio assumenda reprehenderit magni dolor ad voluptas officia.
+                            <p>
+                            Shop and get the finest and latest home furniture pieces at the best prices, best quality and hottest trend .
                             </p>
                             <motion.button whileTap={{scale:1.2}} className="bay__btn"><Link  to='/shop'>SHOP NOW</Link></motion.button>
                             

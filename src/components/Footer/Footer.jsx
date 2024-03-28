@@ -16,9 +16,9 @@ const Footer = () => {
                     </div>
                 </div>
                     <p className="footer__text mt-4">
-                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Placeat, at. 
-                            Asperiores deleniti veniam rem, 
-                            temporibus nulla mollitia provident perspiciatis libero.
+                        An online store for home furniture, the latest furniture products, wood pieces, and the finest exhibits
+                        Shop and get the finest and latest home furniture pieces at the best prices, 
+                        best quality and hottest trend
                     </p>
                 </Col>
                 <Col lg='3' md='3' className="mb-4">
