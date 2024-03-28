@@ -86,7 +86,7 @@ const Footer = () => {
                 </Col>
                 <Col lg='12'>
                     <p className="footer__copyright">
-                        Copyright &copy; {year} Developed By <span className="text-white">Mohamed Shabaan Othman.</span> All rights reserved.
+                        Copyright &copy; {year} Developed By <span >Mohamed Shabaan Othman.</span> All rights reserved.
                     </p>
                 </Col>
             </Row>

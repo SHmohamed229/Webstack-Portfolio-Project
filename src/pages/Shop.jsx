@@ -6,15 +6,21 @@ import ProductsList from "../components/UI/ProductsList";
 import CommonSection from "../components/UI/CommonSection";
 import Helmet from "../components/Helmet/Helmet";
 import { Container , Row ,Col } from "reactstrap";
+
+import useGetData from "../custom-hooks/useGetData";
+
+
 const Shop = () => {
+    const { data:products , loading } = useGetData('products');
     const [productsData , setProductsData] = useState(products);
+
     const handleFilter = (e) =>{
         const filterValue = e.target.value;
         if(filterValue === 'sofa'){
             const filteredProducts = products.filter(product => product.category === 'sofa')
             setProductsData(filteredProducts);
         }
-        else if(filterValue === 'mobile'){
+        else if(filterValue === 'bed'){
             const filteredProducts = products.filter(product => product.category === 'mobile')
             setProductsData(filteredProducts);
         }
@@ -51,9 +57,9 @@ const Shop = () => {
                             <select onChange={handleFilter}>
                                 <option >Filter By Category</option>
                                 <option value="sofa">Sofa</option>
-                                <option value="mobile">Mobile</option>
+                                <option value="bed">Bed</option>
                                 <option value="chair">Chair</option>
-                                <option value="watch">Watch</option>
+                                <option value="watch">Antica</option>
                                 <option value="wireless">Wireless</option>
                             </select>
                         </div>

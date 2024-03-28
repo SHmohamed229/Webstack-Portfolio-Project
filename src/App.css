@@ -65,6 +65,19 @@ section{
   font-weight: 600;
 }
 
+.auth__btn{
+  border: none;
+  outline: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  background: #fff;
+  color:var(--primary-color) ;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-top: 30px;
+}
+
 @media only screen and (max-width: 768px){
   section{
     padding: 40px 0px;

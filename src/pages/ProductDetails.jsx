@@ -11,7 +11,12 @@ import { useDispatch } from "react-redux";
 import { cartAction } from "../redux/slices/cartSlice";
 import { toast } from "react-toastify";
 
+import { db } from "../firebase.config";
+import { doc , getDoc } from "firebase/firestore";
+import useGetData from "../custom-hooks/useGetData";
+
 const ProductDetails = () => {
+    const [product,setProducts] = useState({});
     const [tap,setTap] = useState('desc');
     const reviewUSer = useRef('');
     const reviewMsg = useRef('');
@@ -19,9 +24,31 @@ const ProductDetails = () => {
 
     const [rating,setRating] = useState(null);
     const {id} = useParams();
-    const product = products.find(item => item.id ===id)
+    const {data:products} = useGetData('products');
+    // const product = products.find(item => item.id ===id);
+    const docRef = doc(db,'products',id);
+    useEffect(()=>{
+        const getProduct = async () =>{
+            const docSnap = await getDoc(docRef);
+            if(docSnap.exists()){
+                setProducts(docSnap.data());
+            } else {
+                console.log('no such product!');
+            }
+        }
+        getProduct();
+    },[]);
 
-    const { imgUrl ,productName  , price , avgRating, reviews , description ,shortDesc , category} = product;
+    const { 
+            imgUrl ,
+            productName  , 
+            price , 
+            // avgRating, 
+            // reviews , 
+            description ,
+            shortDesc , 
+            category
+        } = product;
 
     const relatedProducts = products.filter(item => item.category === product.category && item.id !== id);
 
@@ -75,11 +102,11 @@ const ProductDetails = () => {
                                         <span><i class='ri-star-s-fill'></i></span>
                                         <span><i class='ri-star-half-s-fill'></i></span>
                                     </div>
-                                    <p>(<span>{avgRating}</span> ratings)</p>
+                                    {/* <p>(<span>{avgRating}</span> ratings)</p> */}
                                 </div>
                                 <div className="d-flex algin-items-center gap-4">
                                     <span className="product__price">${price}</span>
-                                    <span>Category : {category.toUpperCase()}</span>
+                                    <span>Category : {category?.toUpperCase()}</span>
                                 </div>
                                 <p className="mt-3">{shortDesc}</p>
                                 <motion.button whileTap={{ scale: 1.2 }} className="bay__btn" onClick={addToCart}>
@@ -97,14 +124,16 @@ const ProductDetails = () => {
                         <Col lg='12'>
                             <div className="tap__wrapper d-flex align-items-center gap-5">
                                 <h6 className={`${tap === 'desc' ? 'active__tap' : ""}`} onClick={() => setTap('desc')}>Description</h6>
-                                <h6 className={`${tap === 'rev' ? 'active__tap' : ""}`} onClick={() => setTap('rev')}>Reviews ({reviews.length})</h6>
+                                <h6 className={`${tap === 'rev' ? 'active__tap' : ""}`} onClick={() => setTap('rev')}>Reviews 
+                                {/* ({reviews.length}) */}
+                                </h6>
                             </div>
                             {
                                 tap === 'desc' ? <div className="tap__content mt-4">
                                 <p>{description}</p>
                                 </div>  : <div  className="product__review mt-4">
                                     <div className="review__wrapper">
-                                        <ul>
+                                        {/* <ul>
                                             {
                                                 reviews?.map((item,index) => (
                                                     <li key={index} className="mb-4">
@@ -114,7 +143,7 @@ const ProductDetails = () => {
                                                     </li>
                                                 ))
                                             }
-                                        </ul>
+                                        </ul> */}
                                         <div className="review__form">
                                             <h4>Leave your experience</h4>
                                             <form action="" onSubmit={submitHandler}>
