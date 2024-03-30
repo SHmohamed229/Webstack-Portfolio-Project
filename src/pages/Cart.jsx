@@ -6,7 +6,9 @@ import { Container , Row , Col } from "reactstrap";
 import { motion } from "framer-motion";
 import {cartAction} from '../redux/slices/cartSlice';
 import { useSelector , useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link , useNavigate  } from "react-router-dom";
+import { toast } from "react-toastify";
+
 
 
 
@@ -14,6 +16,7 @@ const Cart = () => {
 
     const cartItems = useSelector(state => state.cart.cartItems);
     const totalAmount = useSelector(state => state.cart.totalAmount);
+    const navigate = useNavigate();
     return <Helmet  title='Cart'>
         <CommonSection title='Shopping Cart' />
         <section>
@@ -56,8 +59,18 @@ const Cart = () => {
                         </div>
                         <p  className="fs-6 mt-2">taxes and shipping will calculate in checkout</p>
                         <div>
-                            <button className="bay__btn w-100 ">
-                                <Link to='/checkout'>Checkout</Link>
+                            <button className="bay__btn w-100 " 
+                            onClick={() => {
+                                if (totalAmount === 0) {
+                                    // عرض رسالة توضيحية بما تريد
+                                    toast.warning('لا يمكن الانتقال للدفع، لا توجد عناصر في السلة.');
+                                } else {
+                                    // إذا كان هناك مبلغ للدفع، يتم الانتقال إلى الرابط
+                                    navigate('/checkout');
+                                }
+                            }}>
+                                    Checkout
+                                {/* <Link to='/checkout'>Checkout</Link> */}
                             </button>
                             <button className="bay__btn w-100 mt-3">
                                 <Link to='/shop'>Continue Shopping</Link>
