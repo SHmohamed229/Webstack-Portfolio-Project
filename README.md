@@ -1,70 +1,34 @@
-# Getting Started with Create React App
+# 2Minutes
+![2Minutes](https://github.com/SHmohamed229/Webstack-Portfolio-Project/blob/master/src/assets/images/mock.png).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+`Finl project` `Web Portfolio project`
 
-## Available Scripts
+> 2Minutes is an online home furnishing store web application that helps people purchase furniture pieces and the latest artistic furnishings. Use Firebase for two-factor authentication and data storage. 
 
-In the project directory, you can run:
 
-### `npm start`
+### Task - Full Stack webstack portfolio project(2Minutes)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### alx_africa
+The ALX Africa Software Engineering Program is a distinctive 12-month (70 hours/week) program that enrolls technology enthusiasts and budding software engineers in a variety of programs across the technical disciplines required to prepare them for a global career as a full-stack developer.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Starting the project
 
-### `npm test`
+1. Clone the repo to your device.
+2. Start the backend server using by Downloading the installer from [NodeJS WebSite](https://nodejs.org/en/)
+     * Run the installer.
+     * Follow the installer steps, agree the license agreement and click 
+     * Now, test NodeJS by printing its version using the following command in Command Prompt:
+         * `node -v`
+4. Run another terminal session. In the frontend directory, run `npm install` to install the required dependencies.
+5. Finally, start the frontend server using `npm start`
+6. You can view the website by visiting [http://localhost:3000](http://localhost:3000) in your browser.
+7. Live Demo: https://2minutes.vercel.app/
+## Tech Used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`React` `Bootstrap` `Firebase` `Firestore DB`
 
-### `npm run build`
+AUTHORS
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Mohamed Shabaan Othman **[Github](https://github.com/SHmohamed229)** , **[twitter](https://twitter.com/Mohamed38Uwk)**, **[Linkedin](in/mohammed-shabaan-othman-3392a2191/)**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+> Show love by leaving a ⭐️ if you like this project 
